@@ -11,7 +11,7 @@ namespace SpreadsheetRegister.Context.Mapping
     {
         public void Configure(EntityTypeBuilder<User> builder)
         {
-            throw new NotImplementedException();
+            builder.HasKey(x => x.Email);
         }
     }
 }

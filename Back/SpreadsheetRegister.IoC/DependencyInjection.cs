@@ -17,7 +17,7 @@ namespace SpreadsheetRegister.IoC
         {
             // Context
             services.AddDbContext<SpreadsheetRegisterContext>(options => options
-                        .UseSqlite("Data Source=c:\\SpreadsheetRegisterDatabase.db"));
+                        .UseSqlite("Data Source= SpreadsheetRegisterDatabase.db"));
 
             // Services
             services.AddScoped<IUserService, UserService>();

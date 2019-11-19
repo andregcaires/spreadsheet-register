@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
@@ -23,12 +24,24 @@ namespace SpreadsheetRegister.Web.Controllers
         [Consumes("multipart/form-data")]
         public JsonResult Post()
         {
-            IFormFileCollection file = Request.Form.Files;
-
-            return new JsonResult(file)
+            try
             {
-                StatusCode = 200
-            };
+                if (Request.Form.Files.Count() > 0)
+                {
+                    return new JsonResult(_service.Insert(Request.Form.Files.FirstOrDefault()));
+                }
+
+                return new JsonResult("File not found")
+                {
+                    StatusCode = 404
+                };
+            } catch (Exception e)
+            {
+                return new JsonResult(e)
+                {
+                    StatusCode = 500
+                };
+            }
         }
     }
 }

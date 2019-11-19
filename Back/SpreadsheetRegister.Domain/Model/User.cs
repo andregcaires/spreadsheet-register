@@ -15,5 +15,6 @@ namespace SpreadsheetRegister.Domain.Model
         {
             return new User();
         }
+
     }
 }

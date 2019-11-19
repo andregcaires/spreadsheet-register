@@ -5,6 +5,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Http.Features" Version="3.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\SpreadsheetRegister.Context\SpreadsheetRegister.Context.csproj" />
     <ProjectReference Include="..\SpreadsheetRegister.Domain\SpreadsheetRegister.Domain.csproj" />
   </ItemGroup>

@@ -20,5 +20,20 @@ namespace SpreadsheetRegister.Context.Common
         {
             throw new NotImplementedException();
         }
+
+        public T FindById()
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<T> SelectAll()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Update(T instance)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
